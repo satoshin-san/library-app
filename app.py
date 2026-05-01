@@ -142,7 +142,7 @@ section[data-testid="stMain"] > div:first-child {
 }
 
 /* 背景 */
-.stApp { background-color: #FFFDF7 !important; }
+.stApp { background-color: #EDD9BE !important; }
 [data-testid="stSidebar"] { background-color: #FAF0E4 !important; }
 
 /* メインテキスト (UDフォントの特性に合わせて少し大きめ・読みやすく) */
@@ -157,7 +157,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] {
     border-radius: 16px !important;
     border: 2px solid #D4A06A !important;
     box-shadow: 0 8px 28px rgba(93,64,55,0.22) !important;
-    background-color: #FFFAF3 !important;
+    background-color: #FFFFFF !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
     position: relative !important;
     /* 🌟 カードの枠線と高さをピシッと揃える強力な魔法 🌟 */
