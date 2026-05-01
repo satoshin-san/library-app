@@ -155,8 +155,8 @@ section[data-testid="stMain"] > div:first-child {
 /* 本棚カード */
 div[data-testid="stVerticalBlockBorderWrapper"] {
     border-radius: 20px !important;
-    border: 1.5px solid #EDE0CF !important;
-    box-shadow: 0 4px 14px rgba(93,64,55,0.08) !important;
+    border: 2px solid #C4956A !important;
+    box-shadow: 0 6px 20px rgba(93,64,55,0.18) !important;
     background-color: #FFFFFF !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
     position: relative !important;
@@ -753,7 +753,7 @@ elif mode == 'audible':
     st.markdown("### 🎧 Audibleで聴きたい")
     tab1, tab2 = st.tabs(["🎧 聴き放題 (Audible対象)", "📙 Audible版あり（有料含む）"])
     with tab1:
-        render_book_grid(df[df["is_audible"] == True], grid_key_suffix="_tab1")
+        st.info("🚧 **現在、聴き放題の判定魔法を調整中です！**\n\nより正確な情報をお届けできるよう、司書が一生懸命メンテナンスしています。完了までもうしばらくお待ちくださいね。")
     with tab2:
         render_book_grid(df[df["has_audible"] == True], grid_key_suffix="_tab2")
 
