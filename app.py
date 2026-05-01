@@ -6,6 +6,7 @@ import requests
 import database
 import calil
 import urllib.parse
+from PIL import Image
 
 def _load_banner(path):
     try:
@@ -121,7 +122,7 @@ def get_badges_html(row):
     return " ".join(badges)
 
 # --- 1. ページ設定 ---
-st.set_page_config(page_title="学長オススメ書籍 本の案内所", page_icon="📚", layout="wide")
+st.set_page_config(page_title="学長オススメ書籍 本の案内所", page_icon=Image.open("assets/Gemini_Generated_Image_br717bbr717bbr71.png"), layout="wide")
 
 # --- 2. スタイル ---
 st.markdown("""
