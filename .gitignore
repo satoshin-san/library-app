@@ -1,0 +1,43 @@
+# アーカイブ（本番不要）
+_archive/
+
+# Python
+*.py[cod]
+__pycache__/
+*.db
+
+# 仮想環境
+.venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# ランタイム生成ファイル（ユーザーデータ・カウンター）
+counter.txt
+data/api_history.json
+data/wishlist.csv
+data/favorites.csv
+
+# macOS
+.DS_Store
+
+# Reflex（未使用）
+.web/
+assets/external/
+
+# バックアップ・旧バージョン（本番不要）
+app_streamlit_backup.py
+app_v1_editorial.py
+migrate_data.py
+rxconfig.py
+my_library_app/
+test/
+test_audible_only.py
+test_extract_image.py
+test_fetch.py
+zukai.md
+学長オススメ書籍HP.txt
+
+# 未使用バナー画像
+assets/Gemini_Generated_Image_japwejjapwejjapw.png
+assets/ChatGPT\ Image\ 2026年4月30日\ 16_44_07.png
