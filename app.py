@@ -122,7 +122,7 @@ def get_badges_html(row):
     return " ".join(badges)
 
 # --- 1. ページ設定 ---
-st.set_page_config(page_title="学長オススメ書籍 本の案内所", page_icon=Image.open("assets/Gemini_Generated_Image_br717bbr717bbr71.png"), layout="wide")
+st.set_page_config(page_title="学長オススメ書籍 本の案内所", page_icon=Image.open("assets/名称未設定のデザイン (2).png"), layout="wide")
 
 # --- 2. スタイル ---
 st.markdown("""
