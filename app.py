@@ -24,12 +24,12 @@ def _load_char(path):
         return ""
 
 _char_b64 = {
-    'buy':     _load_char("assets/1新品で本をかう.png"),
-    'genre':   _load_char("assets/2ジャンルを検索.png"),
-    'cheap':   _load_char("assets/3フリマサイト.png"),
-    'ebook':   _load_char("assets/4電子書籍.png"),
-    'audible': _load_char("assets/5Audible.png"),
-    'library': _load_char("assets/6図書館.png"),
+    'buy':     _load_char("assets/1.png"),
+    'genre':   _load_char("assets/2.png"),
+    'cheap':   _load_char("assets/3.png"),
+    'ebook':   _load_char("assets/4.png"),
+    'audible': _load_char("assets/5.png"),
+    'library': _load_char("assets/6.png"),
 }
 
 def _char_img_html(key, height=120):
