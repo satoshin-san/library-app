@@ -156,7 +156,7 @@ section[data-testid="stMain"] > div:first-child {
 /* 本棚カード */
 div[data-testid="stVerticalBlockBorderWrapper"] {
     border-radius: 16px !important;
-    border: 2px solid #D4A06A !important;
+    border: 2.5px solid #8B5A2B !important;
     box-shadow: 0 8px 28px rgba(93,64,55,0.22) !important;
     background-color: #FFFFFF !important;
     transition: transform 0.25s ease, box-shadow 0.25s ease !important;
