@@ -114,10 +114,8 @@ def get_badges_html(row):
             has_kindle_free = True
         if row.get("has_kindle", False) and not has_kindle_free:
             badges.append(f'<span style="background:#5B8899; color:white; {_b}">📘 Kindle 有料</span>')
-        if row.get("is_audible", False):
-            badges.append(f'<span style="background:#C4880A; color:white; {_b}">🎧 Audible 聴き放題</span>')
-        elif row.get("has_audible", False):
-            badges.append(f'<span style="background:#C46E2A; color:white; {_b}">📙 Audible 有料</span>')
+        if row.get("has_audible", False):
+            badges.append(f'<span style="background:#C4880A; color:white; {_b}">🎧 Audible版あり</span>')
             
     return " ".join(badges)
 
@@ -697,7 +695,7 @@ if mode == 'top':
                 if st.button("🎧 Audibleで聴きたい", use_container_width=True, key="btn_audible"):
                     st.session_state['wizard_mode'] = 'audible'
                     st.rerun()
-                st.caption("聴き放題・有料の本を一覧")
+                st.caption("Audible版がある本を一覧")
         with col3:
             with st.container(border=True):
                 st.markdown(_char_img_html('ebook'), unsafe_allow_html=True)
@@ -752,11 +750,8 @@ elif mode == 'buy':
 # ════════════════════════════════════════════════════════════════════
 elif mode == 'audible':
     st.markdown("### 🎧 Audibleで聴きたい")
-    tab1, tab2 = st.tabs(["🎧 聴き放題 (Audible対象)", "📙 Audible版あり（有料含む）"])
-    with tab1:
-        st.info("🚧 **現在、聴き放題の判定魔法を調整中です！**\n\nより正確な情報をお届けできるよう、司書が一生懸命メンテナンスしています。完了までもうしばらくお待ちくださいね。")
-    with tab2:
-        render_book_grid(df[df["has_audible"] == True], grid_key_suffix="_tab2")
+    st.caption("Audible版がある本の一覧です。聴き放題対象かどうかはAmazonページでご確認ください。")
+    render_book_grid(df[df["has_audible"] == True], grid_key_suffix="_audible")
 
 
 # ════════════════════════════════════════════════════════════════════
