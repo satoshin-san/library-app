@@ -482,6 +482,16 @@ for _k, _v in [
 
 # ─── サイドバー ──────────────────────────────────────────────────────
 with st.sidebar:
+    st.markdown("""
+    <div style="background:#FDF6E8;border:1.5px dashed #BEA054;border-radius:10px;
+                padding:0.6rem 0.8rem;font-size:0.85rem;color:#6B4830;margin-bottom:0.8rem;">
+        🦁 <strong>本の購入・KindleUnlimited／Audible への新規登録は、両学長HPのリンクから行うと応援になります！</strong>
+    </div>
+    """, unsafe_allow_html=True)
+    st.link_button("📚 両学長オススメ書籍HPを見る",
+                   "https://liberaluni.com/recommended-books",
+                   use_container_width=True)
+    st.divider()
     st.markdown("### ⚙️ 表示設定")
     _member = st.toggle(
         "📗🎧 KindleUnlimited・Audible会員モード",
