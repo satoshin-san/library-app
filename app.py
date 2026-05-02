@@ -484,7 +484,7 @@ for _k, _v in [
 with st.sidebar:
     st.markdown("### ⚙️ 表示設定")
     _member = st.toggle(
-        "📗🎧 KU・Audible会員モード",
+        "📗🎧 KindleUnlimited・Audible会員モード",
         value=st.session_state.get('member_mode', False),
         key="member_mode_toggle",
         help="ONにすると各本の「読みたい！」ボタンにAmazon直リンクが表示されます",
@@ -493,7 +493,7 @@ with st.sidebar:
     if _member:
         st.info("🛒 Amazon直リンクモード ON\n読み放題・聴き放題の対象かはAmazonページでご確認ください。", icon="📗")
     else:
-        st.caption("💡 KU・Audible会員の方はONにしてください")
+        st.caption("💡 KindleUnlimited・Audible会員の方はONにしてください")
 
 
 # ─── 共通: 書籍グリッド描画 ────────────────────────────────────────
