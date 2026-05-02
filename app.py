@@ -475,9 +475,25 @@ for _k, _v in [
     ('system_id',          ''),
     ('last_searched_city', ''),
     ('lib_step',           'select'),
+    ('member_mode',        False),
 ]:
     if _k not in st.session_state:
         st.session_state[_k] = _v
+
+# ─── サイドバー ──────────────────────────────────────────────────────
+with st.sidebar:
+    st.markdown("### ⚙️ 表示設定")
+    _member = st.toggle(
+        "📗🎧 KU・Audible会員モード",
+        value=st.session_state.get('member_mode', False),
+        key="member_mode_toggle",
+        help="ONにすると各本の「読みたい！」ボタンにAmazon直リンクが表示されます",
+    )
+    st.session_state['member_mode'] = _member
+    if _member:
+        st.info("🛒 Amazon直リンクモード ON\n読み放題・聴き放題の対象かはAmazonページでご確認ください。", icon="📗")
+    else:
+        st.caption("💡 KU・Audible会員の方はONにしてください")
 
 
 # ─── 共通: 書籍グリッド描画 ────────────────────────────────────────
@@ -558,8 +574,13 @@ def render_book_grid(books_df, show_wishlist_btn=False, grid_key_suffix=""):
 
                             c1, c2 = st.columns(2)
                             with c1:
-                                st.link_button("🦁 学長HP", hp_url, use_container_width=True,
-                                               help="学長HP内のこの本の紹介部分へ飛びます")
+                                if st.session_state.get('member_mode', False):
+                                    st.link_button("🛒 Amazon", row['amazon_url'],
+                                                   use_container_width=True,
+                                                   help="Amazon直リンク（会員モードON）")
+                                else:
+                                    st.link_button("🦁 学長HP", hp_url, use_container_width=True,
+                                                   help="学長HP内のこの本の紹介部分へ飛びます")
                             with c2:
                                 st.link_button("🏛️ カーリル",
                                                f"https://calil.jp/book/{row['isbn']}",
